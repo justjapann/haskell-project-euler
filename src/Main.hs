@@ -51,5 +51,22 @@ palindrome' =  maximum  [x*y | x <- [100..999], y <- [100..999]
                        , x >= y
                        , isPalindrome (x*y)]
 
+-- Exercicio 5
+lcsm' :: [Int] -> Int
+lcsm' = foldr lcm 1
+
+resultLcsm' :: Int
+resultLcsm' = lcsm'[1..20]
+
+-- Exercicio 6
+sumSquare' :: Num a => [a] -> a
+sumSquare' [] = 0
+sumSquare' (x : xs) = x^2 + sumSquare' xs
+
+squareSum' :: Num a => [a] -> a
+squareSum' [] = 0
+squareSum' (x : xs) = x + squareSum' xs
+--squareSum' [1,2..100]^2 - sumSquare'[1,2..100]
+
 main :: IO ()
 main = putStrLn "Hello, world!"
